@@ -8,7 +8,6 @@ function Login() {
     <div>
       <Toaster></Toaster>
       <div>
-
       <Authform type="login"></Authform>
     </div>
     </div>
