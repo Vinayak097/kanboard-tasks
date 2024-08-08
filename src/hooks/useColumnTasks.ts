@@ -8,11 +8,12 @@ import useTaskCollection from './useTaskCollection';
 
 const MAX_TASK_PER_COLUMN = 100;
 
-function useColumnTasks(column: ColumnType) {
+function useColumnTasks(column: ColumnType){
   const [tasks, setTasks] = useTaskCollection();
-
+  console.log("taks in useColumnTasks",tasks);
   const columnTasks = tasks[column];
-
+  
+    
   const addEmptyTask = useCallback(() => {
     debug(`Adding new empty task to ${column} column`);
     setTasks((allTasks) => {
@@ -66,7 +67,7 @@ function useColumnTasks(column: ColumnType) {
     },
     [column, setTasks],
   );
-
+   
   const dropTaskFrom = useCallback(
     (from: ColumnType, id: TaskModel['id']) => {
       setTasks((allTasks) => {

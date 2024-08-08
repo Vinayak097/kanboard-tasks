@@ -15,7 +15,7 @@ import Task from './Task';
 const ColumnColorScheme: Record<ColumnType, string> = {
   Todo: 'gray',
   'In Progress': 'blue',
-  Blocked: 'red',
+  PeerReview: 'red',
   Completed: 'green',
 };
 
@@ -36,12 +36,12 @@ function Column({ column }: { column: ColumnType }) {
       key={task.id}
       task={task}
       index={index}
-      onDropHover={swapTasks}
-      onUpdate={updateTask}
-      onDelete={deleteTask}
+      onDropHover={swapTasks} 
+      onUpdate={updateTask} 
+      onDelete={deleteTask} 
     />
-  ));
-
+  )); 
+  console.log(tasks," hello");
   return (
     <Box>
       <Heading fontSize="md" mb={4} letterSpacing="wide">

@@ -20,7 +20,7 @@ function Task({
   onUpdate: handleUpdate,
   onDropHover: handleDropHover,
   onDelete: handleDelete,
-}: TaskProps) {
+}: TaskProps){
   const { ref, isDragging } = useTaskDragAndDrop<HTMLDivElement>(
     { task, index: index },
     handleDropHover,
@@ -98,6 +98,5 @@ export default memo(Task, (prev, next) => {
   ) {
     return true;
   }
-
   return false;
 });

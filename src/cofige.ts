@@ -1,0 +1,1 @@
+export const  backend_url="https://simplebackend-virid.vercel.app"

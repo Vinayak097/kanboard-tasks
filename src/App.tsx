@@ -1,39 +1,24 @@
-import {} from '@chakra-ui/icons';
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
-import Column from './components/Column';
-import DarkModeIconButton from './components/DarkModeIconButton';
-import { ColumnType } from './utils/enums';
+ 
+
+import { Route, Routes } from 'react-router-dom';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import KanbanBoard from './pages/KanbanBoard';
+import { BrowserRouter } from 'react-router-dom';
+import './app.css'
+import './index.css'
 
 function App() {
   return (
-    <main>
-      <Heading
-        fontSize={{ base: '4xl', sm: '5xl', md: '6xl' }}
-        fontWeight="bold"
-        textAlign="center"
-        bgGradient="linear(to-l, #7928CA, #FF0080)"
-        bgClip="text"
-        mt={4}
-      >
-        Welcome to DnD Kanban
-      </Heading>
-      <DarkModeIconButton position="absolute" top={0} right={2} />
-      <DndProvider backend={HTML5Backend}>
-        <Container maxWidth="container.lg" px={4} py={10}>
-          <SimpleGrid
-            columns={{ base: 1, md: 4 }}
-            spacing={{ base: 16, md: 4 }}
-          >
-            <Column column={ColumnType.TO_DO} />
-            <Column column={ColumnType.IN_PROGRESS} />
-            <Column column={ColumnType.BLOCKED} />
-            <Column column={ColumnType.COMPLETED} />
-          </SimpleGrid>
-        </Container>
-      </DndProvider>
-    </main>
+    <BrowserRouter>
+    <Routes>
+    <Route element={<Home />} path="/"></Route>
+    <Route element={<Login></Login>} path="/login"></Route>
+    <Route element={<Signup />} path="/signup"></Route>
+    <Route element={<KanbanBoard />} path="/kanban"></Route>
+  </Routes>
+  </BrowserRouter>
   );
 }
 

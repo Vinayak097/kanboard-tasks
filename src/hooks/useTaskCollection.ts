@@ -24,13 +24,13 @@ function useTaskCollection() {
         color: 'yellow.300',
       },
     ],
-    Blocked: [
+    'PeerReview': [
       {
         id: uuidv4(),
-        column: ColumnType.BLOCKED,
+        column: ColumnType.PeerReview,
         title: 'Task 3',
         color: 'red.300',
-      },
+      },    
     ],
     Completed: [
       {
